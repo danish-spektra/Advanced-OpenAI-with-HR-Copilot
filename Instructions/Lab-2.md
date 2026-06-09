@@ -18,39 +18,41 @@ In this task, you will explore how to set up and configure the Azure OpenAI envi
 
    ![](../media/img1lab2.png "Azure OpenAI")
 
-1. From the **Azure AI services | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
+1. From the **Microsoft Foundry | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
 
-   ![](../media/img3lab2.png "Azure OpenAI")
+   ![](../media/im-d.png "Azure OpenAI")
 
-1. In the Azure OpenAI resource pane, select **Go to Azure Foundry portal**.
+1. In the Azure OpenAI resource pane, select **Go to Foundry portal**.
 
    ![](../media/aifd.png "Azure OpenAI")
+
+   >**Note:** If you see the Create project screen, turn off the **New Foundry** toggle in the top-right corner. When the feedback pop-up appears, click **Continue without feedback**. Under Keep building with Microsoft Foundry, click **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** Resource.
       
-1. In the **Azure OpenAI Studio**, select **Deployments** under Management and verify that the **gpt-4** and **text-embedding-ada-002** models are present with the deployment names as **copilot-gpt** and **text-embedding-ada-002**. Review that the model's capacity is set to **15K TPM**. Copy the Azure OpenAI deployment names and model names into a text file for later use.
+1. In the **Azure OpenAI Studio**, select **Deployments (1)** under Shared Resources and verify that the **gpt-4.1** and **text-embedding-ada-002** models are present with the deployment names **(2)** as **copilot-gpt** and **text-embedding-ada-002**. Review that the model's capacity **(3)** is set to **15**. Copy the Azure OpenAI deployment names and model names into a text file for later use.
    
-   ![](../media/p12.png "Azure OpenAI")
+   ![](../media/im-e.png)
 
 1. Make sure to copy the deployment name, API key, API version, and endpoint.
 
    ![](../media/p12.1.png)
 
-1. You can also find the values by navigating back to the Azure OpenAI resource on the **Azure portal**, select **Keys & Endpoint (1)** from the left menu, and click on **Show Keys (2)**. Copy the **KEY 1 (3)** and **Endpoint (4)**, and store them in a text file for later use.
+1. You can also find the values by navigating back to the Azure OpenAI resource on the **Azure portal**, select **Keys & Endpoint (1)** under resource management from the left menu, and click on **Show Keys (2)**. Copy the **KEY 1 (3)** and **Endpoint (4)**, and store them in a text file for later use.
 
    ![](../media/l1-t2-s5.png "Azure OpenAI")
    
 1. Navigate back to the **Azure portal**, then locate and select **AI Search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
 
-   ![](../media/l1-t2-s6.png "Azure OpenAI")
+   ![](../media/im-f.png "Azure OpenAI")
 
 1. From the Overview tab of Cognitive Search, copy the **URL** and paste it into a text editor for later use.
 
    ![](../media/img36.png "Azure OpenAI")
 
-1. From the left menu, select **Keys (1)**, copy the **Primary admin key (2)**, and paste it into a text editor for later use.
+1. From the left menu, select **Keys (1)** under security + networking, copy the **Primary admin key (2)**, and paste it into a text editor for later use.
 
-   ![](../media/img66.png "Azure OpenAI")
+   ![](../media/im-g.png "Azure OpenAI")
 
-1. Open **Visual Studio Code** from the desktop. Then select **File** and click **Open Folder**.
+1. Open **Visual Studio Code** from the desktop. Then select **File (1)** and click **Open Folder (2)**.
 
     ![](../media/img55.png) 
 
@@ -78,7 +80,7 @@ In this task, you will explore how to set up and configure the Azure OpenAI envi
 
 1. Next, click on the **Eclipse Button (1)** on the top, then select **Terminal (2)** and click on **New Terminal (3)**.
 
-    ![](../media/img59.png) 
+    ![](../media/img69.png) 
 
 1. In the new terminal, run the following command to install the required modules:
 
@@ -92,7 +94,7 @@ In this task, you will explore how to set up and configure the Azure OpenAI envi
 
     ![](../media/img60.png) 
 
-1. Click on the **Run (1)** button in the first cell. Once the pop-up `Install/Enable suggested extensions Python + Jupyter` appears, click on it to install the Python and Jupyter extensions. 
+1. Click on the **Run (1)** button in the first cell. Once the pop-up `Install/Enable suggested extensions Python + Jupyter` (2)  appears, click on it to install the Python and Jupyter extensions. 
 
     ![](../media/img61.png) 
 
