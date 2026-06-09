@@ -75,9 +75,7 @@ In this task, you will explore how to set up and configure the Azure OpenAI envi
     - **SEARCH_ADMIN_KEY**: `Replace the value with the Search Service key`
 
    ![](../media/img58.png)
-
-
-
+   
 1. Next, click on the **Eclipse Button (1)** on the top, then select **Terminal (2)** and click on **New Terminal (3)**.
 
     ![](../media/img69.png) 
