@@ -49,15 +49,33 @@ The architecture for this lab involves the following key components:
 
 ## Getting Started with the Lab
 
-1. After the environment has been set up, your browser will load a virtual machine (JumpVM) and the lab manual. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the bottom of the lab guide to switch to different exercises in the lab guide.
+After the environment has been set up, your browser will load a virtual machine (JumpVM) and the lab manual. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the bottom of the lab guide to switch to different exercises in the lab guide.
 
-   ![](../media/im-01.png)
+ ![](../media/im-01.png)
  
-1. To get the lab environment details, you can select the **Environment** details tab. Additionally, the credentials will be emailed to your registered email address. Additionally, under the **Resources** tab, you may start, stop, and restart virtual machines.
-
+## Exploring Your Lab Resources
+ 
+To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
+ 
    ![](../media/im-02.png "Enter Email")
  
-   > You will see the SUFFIX value on the **Environment Details** tab; use it wherever you see SUFFIX or DeploymentID in lab steps.
+## Utilizing the Split Window Feature
+ 
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the Top right corner.
+ 
+ ![](../media/im-a.png)
+
+ ## Lab Guide Zoom In/Zoom Out
+ 
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
+
+ ![](../media/im-b.png)
+ 
+## Managing Your Virtual Machine
+ 
+Feel free to start, stop, or restart your virtual machine as needed from the **Resources** tab. Your experience is in your hands!
+ 
+ ![](../media/im-c.png)
  
 ## Login to the Azure Portal
 

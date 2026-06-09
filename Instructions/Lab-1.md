@@ -41,6 +41,8 @@ In this task, you will review the setup of the OpenAI resource, which has alread
 1. In the Azure OpenAI resource pane, select **Go to Foundry portal**.
 
    ![](../media/im-05.png "Azure OpenAI")
+
+   >**Note:** If you see the Create project screen, turn off the **New Foundry** toggle in the top-right corner. When the feedback pop-up appears, click **Continue without feedback**. Under Keep building with Microsoft Foundry, click **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** Resource.
    
 1. In the Azure OpenAI Studio, click **Deployments (1)**, click **+ Deploy model (2)** and select **Deploy base model (3)**.
 
@@ -57,6 +59,8 @@ In this task, you will review the setup of the OpenAI resource, which has alread
    - Tokens per Minute Rate Limit (thousands): **15K (3)**
 
      ![](../media/im-08.png)
+
+     > **Note:** This task is **READ-ONLY**. The model is already configured for your environment. Please **DO NOT** click on **Deploy**. 
    
 ### Task 2: Building a ChatGPT-like application on Streamlit with streaming
 
@@ -112,7 +116,7 @@ In this task, you will configure a locally hosted application that mimics the fu
 
     >**Tip:** **Streamlit** is an open-source Python framework that enables rapid development of interactive web apps for data science and machine learning projects. It allows developers to create user-friendly dashboards and visualizations with minimal coding.
  
-1. Next, click on the **Eclipse Button** on the top, then select **Terminal** and click on **New Terminal**.
+1. Next, click on the **Eclipse Button (1)** on the top, then select **Terminal (2)** and click on **New Terminal (3)**.
 
     ![](../media/img69.png) 
 
