@@ -1,5 +1,7 @@
 # Lab 03: Deploy and Run the HR/Payroll Copilot Application  
 
+## Overview
+
 **Smart Agent: At the heart of the solution is a Python object named Smart_Agent, which consists of the following components:**
 
   - **Goals/Tasks:** Smart_Agent is given a persona and instructions to follow to achieve certain goals; for example, HR Copilot is about helping answer HR/Payroll questions and update employees' personal information. This is done using instructions specified in the system message.
@@ -17,46 +19,48 @@ In this task, you will set up the HR/Payroll Copilot locally on your LabVM. You 
 
    ![](../media/L2-T1-S1.png "Azure OpenAI")
 
-1. From the **Azure AI services | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
+1. From the **Microsoft Foundry | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
 
-   ![](../media/L2-T1-S2.png "Azure OpenAI")
+   ![](../media/im-d.png "Azure OpenAI")
 
-1. In the Azure OpenAI resource pane, select **Go to Azure OpenAI Studio**.
+1. In the Azure OpenAI resource pane, select **Go to Foundry Portal**.
 
-   ![](../media/L2-T1-S3.png "Azure OpenAI")
+   ![](../media/im-h.png "Azure OpenAI")
+
+   >**Note:** If you see the Create project screen, turn off the **New Foundry** toggle in the top-right corner. When the feedback pop-up appears, click **Continue without feedback**. Under Keep building with Microsoft Foundry, click **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** Resource.
       
-1. In the **Azure OpenAI Studio**, select **Deployments** under Management and verify that the **gpt-4** and **text-embedding-ada-002** models are present with the deployment names as **mygpt-4** and **ada-002**. Review that the model's capacity is set to **15K TPM**. Copy the Azure OpenAI deployment names and model names into the text file for later use.
+1. In the **Azure OpenAI Studio**, select **Deployments (1)** under Shared resources and verify that the **gpt-4.1** and **text-embedding-ada-002** models are present with the deployment names **(2)** as **copilot-gpt** and **ada-002**. Review that the model's capacity **(3)** is set to **15**. Copy the Azure OpenAI deployment names and model names into the text file for later use.
    
-   ![](../media/eyhackday2img4.png)
+   ![](../media/im-i.png)
 
-   ![](../media/eyhackday2img5.png)
+   ![](../media/im-j.png)
 
    >**Note:** Use bottom horizontal scroll bar to check the capacity value.
 
-1. Navigate back to the Azure OpenAI resource on the **Azure portal**, select **Keys & Endpoint (1)** from the left menu, and click on **Show Keys (2)**. Copy the **KEY 1 (3)** and **Endpoint (4)**, and store them in a text file for later use.
+1. Navigate back to the **Azure OpenAI** resource on the Azure portal, select **Keys & Endpoint (1)** under Resource management from the left menu, and click on **Show Keys (2)**. Copy the **KEY 1 (3)** and **Endpoint (4)**, and store them in a text file for later use.
 
    ![](../media/L2-T1-S5.png "Azure OpenAI")
    
-1. Navigate back to **Azure OpenAI**, select **AI search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
+1. Navigate back to **Micosoft Foundry**, select **AI search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
 
-   ![](../media/l1-t2-s6.png "Azure OpenAI")
+   ![](../media/im-f.png "Azure OpenAI")
 
 1. From the Overview tab of Cognitive Search, copy the **URL** and paste it into a text editor for later use.
 
    ![](../media/img36.png "Azure OpenAI")
 
-1. From the left menu, select **Key (1)**, copy the **Primary admin key (2)**, and paste it into a text editor for later use.
+1. From the left menu, select **Keys (1)** under security + networking, copy the **Primary admin key (2)**, and paste it into a text editor for later use.
 
-   ![](../media/img66.png "Azure OpenAI")
+   ![](../media/im-g.png "Azure OpenAI")
 
-1. In the LabVM, open File Explorer, navigate to the below-mentioned path.
+1. In the LabVM, open **File Explorer (1)**, navigate to the below-mentioned path.
 
    ```
    C:\Labfiles\OpenAIWorkshop\scenarios\incubations\copilot
    ```
     ![](../media/img38.0.png)
 
-    **Right-click** on the `secrets.env` file, and select open with  **Visual Studio Code**.
+1. **Right-click** on the `secrets.env` file, and select open with  **Visual Studio Code**.
 
     ![](../media/img38.png)
 
@@ -85,7 +89,7 @@ In this task, you will set up the HR/Payroll Copilot locally on your LabVM. You 
 
     ![](../media/L3-T1-S11.png)
 
-1. Next, click on the **Eclipse Button** on the top, then select **Terminal** and click on **New Terminal**.
+1. Next, click on the **Eclipse Button (1)** on the top, then select **Terminal (2)** and click on **New Terminal (3)**.
 
     ![](../media/img69.png) 
 
@@ -143,9 +147,9 @@ In this task, you will set up the HR/Payroll Copilot locally on your LabVM. You 
 
 This task involves integrating Azure Cognitive Search with your HR/Payroll Copilot application. You'll set up data sources, configure the search index, and create vector profiles for enhanced search capabilities.
 
-1. Navigate to **Azure AI services**, select **AI Search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
+1. Navigate to **Microsoft Foundry**, select **AI Search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
 
-   ![](../media/l1-t2-s6.png "Azure OpenAI")
+   ![](../media/im-f.png "Azure OpenAI")
 
 1. On the **Overview (1)** page, click on **Import data (2)**.
 
