@@ -58,7 +58,7 @@ After the environment has been set up, your browser will load a virtual machine 
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-   ![](../media/im-02.png "Enter Email")
+   ![](../media/change-2.png "Enter Email")
  
 ## Utilizing the Split Window Feature
  
@@ -90,9 +90,9 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
    
       ![](../media/sc900-image-1.png "Enter Email")
      
-3. Now enter the following password and click on **Sign in**.
+3. Now enter the following Temporary Access Pass, and click on **Sign in**.
    
-   * **Password**: <inject key="AzureAdUserPassword"></inject>
+   * **Temporary Access Pass**: <inject key="AzureAdUserPassword"></inject>
    
       ![](../media/tpwrd.png "Enter Password")
      
