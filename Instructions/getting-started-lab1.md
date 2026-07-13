@@ -4,19 +4,19 @@
 
 ## Overview
 
-In this hands-on lab, you will provision an Azure OpenAI resource in Azure AI Foundry and install the application locally. Modern Azure OpenAI deployments now focus on lifecycle-supported models such as GPT-4.1, GPT-4.1-mini, and the GPT-5 family, replacing legacy GPT-3 and earlier GPT-4 variants. This ensures your solution is aligned with Microsoft’s current model roadmap and long-term upgrade strategy.
+In this hands-on lab, you will provision an Azure OpenAI resource in Microsoft Foundry and install the application locally. Modern Azure OpenAI deployments now focus on the lifecycle-supported **GPT-5.4** model, replacing legacy GPT-3, GPT-4, and GPT-4.1 variants. This ensures your solution is aligned with Microsoft’s current model roadmap and long-term upgrade strategy.
 
-A key capability you will explore is **Function Calling**, which enables GPT-4.1 and GPT-5 class models to return structured JSON outputs mapped to predefined functions. Instead of generating only natural-language responses, the model can determine when to invoke external tools and provide validated arguments for execution. This structured interaction allows developers to integrate AI models with APIs, databases, and backend services to build intelligent, production-ready applications.
+A key capability you will explore is **Function Calling**, which enables the GPT-5.4 model to return structured JSON outputs mapped to predefined functions. Instead of generating only natural-language responses, the model can determine when to invoke external tools and provide validated arguments for execution. This structured interaction allows developers to integrate AI models with APIs, databases, and backend services to build intelligent, production-ready applications.
 
 Additionally, this lab introduces an agent-based architecture using Python. You will examine how an AI agent is structured around defined goals and tasks, natural-language interaction, tool execution, and memory management. You will also explore how a multi-agent copilot model uses specialist agents coordinated by an agent runner to manage tasks efficiently and maintain continuity across domains.
 
 ## Objective
 
-In this lab, you will learn how to deploy supported Azure OpenAI models (such as GPT-4.1 or GPT-5 family models), configure them securely, and integrate them into intelligent applications using function calling and agent-based design.
+In this lab, you will learn how to deploy the supported **GPT-5.4** Azure OpenAI model, configure it securely, and integrate it into intelligent applications using function calling and agent-based design.
 
 By the end of this lab, you will be able to:
 
-- **Getting Started with Building a Chat Application:** Deploy a lifecycle-supported Azure OpenAI model, configure secure access using API keys or Microsoft Entra ID, and build a responsive AI-powered chat application integrated with function calling capabilities.
+- **Getting Started with Building a Chat Application:** Deploy the lifecycle-supported GPT-5.4 model, configure secure access using API keys or Microsoft Entra ID, and build a responsive AI-powered chat application integrated with function calling capabilities.
 - Implement structured function calling to connect the model with external services or APIs.
 - Design and deploy a multi-agent copilot application using Python.
 
@@ -24,14 +24,14 @@ By the end of this lab, you will be able to:
 
 Participants should have:
 
-- **Familiarity with Modern GPT Models:** Understanding of GPT-4.1 class or GPT-5 class models and their enterprise use cases within Azure OpenAI.
+- **Familiarity with Modern GPT Models:** Understanding of the GPT-5.4 model and its enterprise use cases within Azure OpenAI.
 - **Experience with REST APIs:** Familiarity with REST APIs, as function calling involves interacting with external services.
 - **Basic Programming Skills:** Proficiency in Python to follow along with the Smart_Agent object setup and multi-agent copilot implementation.
 - **Basic Azure Knowledge:** Familiarity with Azure Portal and resource deployment concepts.
 
 ## Architecture
 
-In this hands-on lab, the architecture flow includes several essential components. You’ll begin by setting up the Azure OpenAI resource in Azure AI Foundry and installing the required application locally. At the heart of the architecture is the Azure OpenAI Service, utilizing lifecycle-supported models such as GPT-4.1, GPT-4.1-mini, or GPT-5 family models. These models use function calling capabilities to generate structured JSON outputs.
+In this hands-on lab, the architecture flow includes several essential components. You’ll begin by setting up the Azure OpenAI resource in Microsoft Foundry and installing the required application locally. At the heart of the architecture is the Azure OpenAI Service, utilizing the lifecycle-supported **GPT-5.4** model. This model uses function calling capabilities to generate structured JSON outputs.
 
 The Smart Agent Python object plays a crucial role, handling tasks such as goal definition, natural language processing (NLP) interactions, tool execution, and conversation memory management, while securely connecting to the deployed Azure OpenAI model. Additionally, the system leverages a multi-agent copilot model, where a specialized agent runner manages and coordinates tasks among multiple domain-specific agents, ensuring efficient task handling, contextual continuity, and scalable orchestration across different domains.
 
@@ -45,7 +45,7 @@ The architecture for this lab involves the following key components:
 
 - **Azure OpenAI:** Azure OpenAI Service provides REST API access to OpenAI's powerful language models and these models integrate with your data, enabling customized and secure interactions.
 
-- **Azure OpenAI Models:** Offers pre-trained and customizable large language models for various AI applications. These models enable powerful, AI-driven solutions by generating tailored and contextually relevant content based on well-crafted prompts.
+- **Azure OpenAI Models:** Offers the GPT-5.4 large language model for various AI applications. This model enables powerful, AI-driven solutions by generating tailored and contextually relevant content based on well-crafted prompts.
 
 ## Getting Started with the Lab
 

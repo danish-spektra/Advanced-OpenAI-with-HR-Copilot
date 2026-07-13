@@ -2,60 +2,64 @@
 
 ## Overview
 
-In this lab, you will learn how to build a chat application using Azure OpenAI. The lab involves setting up the necessary OpenAI resources and deploying a ChatGPT-like application using Streamlit. By the end of this lab, you will have a fully functional application that can interact with users through a simple web interface.
+In this lab, you will learn how to build a chat application using Microsoft Foundry portal. The lab involves setting up the necessary OpenAI resources and deploying a ChatGPT-like application using Streamlit. By the end of this lab, you will have a fully functional application that can interact with users through a simple web interface.
 
 ## Exercise 1: Open AI Setup and Installation of Applications
 
-In this exercise, you will set up the OpenAI resource and install the necessary applications locally. This exercise is divided into two tasks: setting up the OpenAI resource (read-only) and building a ChatGPT-like application.
+In this exercise, you will see how the Foundry resource is set up and then install the necessary applications locally. This exercise is divided into two tasks: setting up the OpenAI resource (read-only) and building a ChatGPT-like application.
 
 ### Task 1: Create an OpenAI resource and model **(Read-Only)**
 
  > **Note:** This task is **READ-ONLY**. The OpenAI setup is already configured for your environment.
 
-In this task, you will review the setup of the OpenAI resource, which has already been configured for your environment. This task is read-only, meaning no changes will be made.
+In this task, you will review the setup of the Foundry resource, which has already been configured for your environment. This task is read-only, meaning no changes will be made.
 
-1. In the Azure portal, search for **Azure OpenAI** **(1)** in the top search box, then select **Azure OpenAI** **(2)** under Services.
+1. In the Azure portal, search for **Foundry** **(1)** in the top search box, then select **Microsoft Foundry** **(2)** under Services.
 
-   ![](../media/L1-T1-S1.png "Azure OpenAI")
+   ![](../media/L1-T1-S1.png "Microsoft Foundry")
    
-1. From the **Microsoft Foundry | Azure OpenAI** pane, click on **+ Create (1)**, from the drop-down, select **Azure OpenAI (2)**.
+1. From the side pane, expand **use with foundry (1)**, click on **Foundry (2)**, select **Create (3)**.
 
    ![](../media/exe100.png "Azure OpenAI")
    
-1. In the **Create Azure OpenAI** pane under the **Basics** tab, select the **default subscription (1)** and select the existing **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)** resource group. Select **East US (3)** as Region, enter Name as **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>(4)** and select **Standard S0 (5)** for Pricing Tier. Click on **Next (6)**.
+1. In the **Create a Foundry resource** pane under the **Instance Details** tab, select the **default subscription (1)** and select the existing **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)** resource group. Select **East US (3)** as Region, enter Name as **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>(4)** and project name to be **odl-<inject key="Deployment ID" enableCopy="false"/>-proj (5)**. Click on **Review + Create (6)**.
 
    ![](../media/L1-T1-S3.png "Azure OpenAI")
-   
-1. Leave default settings for the Network and Tags tabs and click on **Next**.
 
-1. Verify that validation has passed in the **Review + Submit** pane, and then click on **Create**.
+1. Verify that validation has passed in the **Review + Create** pane, and then click on **Create**.
 
-     > **Note:** This task is **READ-ONLY**. The OpenAI setup is already configured for your environment. Please **DO NOT** click on **Create**. 
+   > **Note:** This task is **READ-ONLY**. The OpenAI setup is already configured for your environment. Please **DO NOT** click on **Create**. 
 
    ![](../media/L1-T1-S5.png "Azure OpenAI")
    
-1. The deployment takes approximately 5 minutes to complete. Once the deployment is successful, click on **Go to Resource**.
-
-   ![](../media/L1-T1-S6.png "Azure OpenAI")
-   
-1. In the Azure OpenAI resource pane, select **Go to Foundry portal**.
+1. In the Microsoft Foundry resource pane, select **Go to Foundry portal**.
 
    ![](../media/im-05.png "Azure OpenAI")
 
-   >**Note:** If you see the Create project screen, turn off the **New Foundry** toggle in the top-right corner. When the feedback pop-up appears, click **Continue without feedback**. Under Keep building with Microsoft Foundry, click **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** Resource.
+   >**Note:** You will be working in the new Foundry experience and will explore and work with the latest interface.
+
+1. The Environment would already have a project **pre-setup**, you can proceed to navigate to the existing one by clicking on it.
+
+   ![](../media/exst-proj.png)
    
-1. In the Azure OpenAI Studio, click **Deployments (1)**, click **+ Deploy model (2)** and select **Deploy base model (3)**.
+1. In the Foundry portal, click **Build (1)**, click **Deployments (2)** and select **Deploy (3) base model (4)**.
 
    ![](../media/eyhackday2img6.png)
 
-1. On the **Select a Model** pane, search for `gpt-4.1` **(1)** and select **gpt-4.1 (2)** model from the list and click on **Confirm (3)**.
+   >Note: You will see models are already configured but the idea is to show how models are deployed within Foundry
+
+1. On the **Explore models** tab, search for `gpt-5.4` (1) and select the respective model (2).
 
    ![](../media/im-07.png)
    
-1. On the **Deploy Model gpt-4.1** tab, enter the following details and click on **Deploy (4)**.
+1. You can then proceed to customize the model's configuration by clicking **Deploy (1)** and choosing **Custom Settings (2)**.
 
-   - Deployment name: **copilot-gpt (1)**
-   - Deployment type: **Standard (2)**
+   ![](../media/custgpt.png)
+
+1. Cross verify the details and proceed to **Deploy (4)**.
+
+   - Deployment name: **gpt-5.4 (1)**
+   - Deployment type: **Global Standard (2)**
    - Tokens per Minute Rate Limit (thousands): **15K (3)**
 
      ![](../media/im-08.png)
@@ -66,27 +70,23 @@ In this task, you will review the setup of the OpenAI resource, which has alread
 
 In this task, you will configure a locally hosted application that mimics the functionality of ChatGPT. This will involve setting up necessary files, configuring secrets, and running the application. 
 
-1. In the Azure portal, search for **Azure OpenAI** **(1)** in the top search box, then select **Azure OpenAI** **(2)** under services.
+1. In the Azure portal, search for **Foundry** **(1)** in the top search box, then select **Microsoft Foundry** **(2)** under Services.
 
-   ![](../media/L1-T2-S1.png "Azure OpenAI")
+   ![](../media/L1-T1-S1.png "Azure OpenAI")
 
-1. From the **Microsoft Foundry | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
+1. From the side pane, expand **use with foundry (1)**, click on **Foundry (2)**, select the existing **Foundry resource (3)**.
 
-   ![](../media/im-06.png "Azure OpenAI")
+   ![](../media/exe100-1.png "Azure OpenAI")
 
-1. In the Azure OpenAI resource pane, select **Go to Foundry portal**.
+1. In the Foundry resource pane, select **Go to Foundry portal**.
 
    ![](../media/im-05.png "Azure OpenAI")
       
-1. In the **Microsoft Foundry** portal, select **Deployments** under Management and verify that the **gpt-4.1** model is present with the deployment name **copilot-gpt**. Review that the model's capacity is set to **15**. Copy the Azure OpenAI deployment name and model name into the text file for later use.
+1. In the **Microsoft Foundry** portal, select **Build (1)** on the top bar and click **Deployments (2)** and verify that the **gpt-5.4 (3)** model is present.
    
    ![](../media/im-09.png "Azure OpenAI")
 
-   ![](../media/tpm_change1.png)
-
-   >**Note:** If you are not able to see the **capacity** value, please use the horizontal scroll bar from bottom of the page.
-
-1. Navigate back to the Azure OpenAI resource on the **Azure portal**, select **Keys & Endpoint (1)** under Resource Management from the left menu, and click on **Show Keys (2)**. Copy the **KEY 1 (3)** and **Endpoint (4)**, and store them in a text file for later use.
+1. Navigate back to the **Home tab (1)** on the **Foundry resource**, copy the **API Key (2)** and **Azure OpenAI Endpoint (3)**, and store them in a text file for later use.
 
    ![](../media/L1-T2-S5.png "Azure OpenAI")
    
@@ -105,7 +105,7 @@ In this task, you will configure a locally hosted application that mimics the fu
 1. In the `secrets.env` file, replace the following values with the ones you copied earlier. Press **CTRL+S** to save the file.
 
     - **AZURE_OPENAI_API_KEY**: Replace with your Azure OpenAI Key
-    - **AZURE_OPENAI_CHAT_DEPLOYMENT**: Replace with `copilot-gpt`
+    - **AZURE_OPENAI_CHAT_DEPLOYMENT**: Replace with `gpt-5.4`
     - **AZURE_OPENAI_ENDPOINT**: Replace with your Azure OpenAI **Endpoint**
 
       ![](../media/img68.png)
@@ -154,6 +154,6 @@ In this task, you will configure a locally hosted application that mimics the fu
 
 In this lab, you have accomplished the following:
 
-- You reviewed the setup of the OpenAI resource, which was pre-configured for your environment.
+- You reviewed the setup of the Foundry resource, which was pre-configured for your environment.
 - You configured and deployed a ChatGPT-like application using Streamlit.
 - You successfully hosted the application locally and tested its functionality by running queries.

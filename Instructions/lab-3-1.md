@@ -9,39 +9,35 @@
   - **NLP interaction and tool execution:** For the ability to use multiple tools and functions to accomplish business tasks, the function calling capability of the 0613 version is utilized to intelligently select the right function (validate identity, search the knowledge base, update address, create ticket) based on the agent's judgment of what needs to be done. The agent is also able to engage with users by following the instructions and goals defined in the system message.
 
   - **Memory:** The agent maintains a memory of the conversation history. The memory is backed by Streamlit session state.
-  - **LLM:** The agent is linked to a 0613 GPT-4 model to power its intelligence.
+  - **LLM:** The agent is linked to a GPT-5 model to power its intelligence.
 
 ### Task 1: Build your own HR/Payroll copilot locally
 
 In this task, you will set up the HR/Payroll Copilot locally on your LabVM. You will configure the application by updating the required environment variables and running it using Streamlit. This task ensures you understand how to set up and run the application in a local environment before moving to Azure.
 
-1. In the Azure portal, search for **Azure OpenAI** **(1)** in the top search box, then select **Azure OpenAI** **(2)** under services.
+1. In the Azure portal, search for **Foundry** **(1)** in the top search box, then select **Microsoft Foundry** **(2)** under Services.
 
-   ![](../media/L2-T1-S1.png "Azure OpenAI")
+   ![](../media/L1-T1-S1.png "Azure OpenAI")
 
-1. From the **Microsoft Foundry | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
+1. From the side pane, expand **use with foundry (1)**, click on **Foundry (2)**, select the existing **Foundry resource Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>(3)**.
 
-   ![](../media/im-d.png "Azure OpenAI")
+   ![](../media/exe100-1.png "Azure OpenAI")
 
-1. In the Azure OpenAI resource pane, select **Go to Foundry Portal**.
+1. In the Foundry resource pane, select **Go to Foundry portal**.
 
-   ![](../media/im-h.png "Azure OpenAI")
-
-   >**Note:** If you see the Create project screen, turn off the **New Foundry** toggle in the top-right corner. When the feedback pop-up appears, click **Continue without feedback**. Under Keep building with Microsoft Foundry, click **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** Resource.
+   ![](../media/im-05.png "Azure OpenAI")
       
-1. In the **Azure OpenAI Studio**, select **Deployments (1)** under Shared resources and verify that the **gpt-4.1** and **text-embedding-ada-002** models are present with the deployment names **(2)** as **copilot-gpt** and **ada-002**. Review that the model's capacity **(3)** is set to **15**. Copy the Azure OpenAI deployment names and model names into the text file for later use.
+1. In the **Microsoft Foundry** portal, select **Build (1)** on the top bar and click **Models (2)** and verify that the **copilot-gpt (3)** model is present, as well as the text embedding model, both of which are pre-deployed for this lab.
    
-   ![](../media/im-i.png)
+   ![](../media/im-e.png)
 
-   ![](../media/im-j.png)
+1. Make sure to copy the deployment name, API key, and endpoint of the model and save them in your editor.
 
-   >**Note:** Use bottom horizontal scroll bar to check the capacity value.
+1. Navigate back to the **Home tab (1)** on the **Foundry resource**, copy the **API Key (2)** and **Azure OpenAI Endpoint (3)**, and store them in a text file for later use.
 
-1. Navigate back to the **Azure OpenAI** resource on the Azure portal, select **Keys & Endpoint (1)** under Resource management from the left menu, and click on **Show Keys (2)**. Copy the **KEY 1 (3)** and **Endpoint (4)**, and store them in a text file for later use.
-
-   ![](../media/L2-T1-S5.png "Azure OpenAI")
+   ![](../media/l1-t2-s5.png "Azure OpenAI")
    
-1. Navigate back to **Micosoft Foundry**, select **AI search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
+1. Navigate back to **Microsoft Foundry**, select **AI Search (1)** from the left menu, and click on **copilot-openai-<inject key="Deployment ID" enableCopy="false"/> (2)**.
 
    ![](../media/im-f.png "Azure OpenAI")
 
@@ -60,29 +56,29 @@ In this task, you will set up the HR/Payroll Copilot locally on your LabVM. You 
    ```
     ![](../media/img38.0.png)
 
-1. **Right-click** on the `secrets.env` file, and select open with  **Visual Studio Code**.
+1. **Right-click** on the `secrets.env` file, and select **Open with** > **Visual Studio Code**.
 
     ![](../media/img38.png)
 
-1. The Visual Studio code is opened on the desktop. Edit the below code and update the **Azure OpenAI Key**, **Embedding Model name and GPT Deployment name**, **Azure OpenAI Endpoint**, **Cognitive Search Endpoint**, and **AZURE_SEARCH_ADMIN_KEY** values that you have copied and stored in the text file earlier.
+1. Visual Studio Code opens on the desktop. Edit the below code and update the **Azure OpenAI Key**, **Embedding Model name and GPT Deployment name**, **Azure OpenAI Endpoint**, **Cognitive Search Endpoint**, and **AZURE_SEARCH_ADMIN_KEY** values that you have copied and stored in the text file earlier.
 
     ```python
-      AZURE_OPENAI_API_KEY = "YOUR_OPENAI_KEY" //#Replace it with the OpenAI key you copied in Task 1,Step 5.
+      AZURE_OPENAI_API_KEY = "YOUR_OPENAI_KEY" //#Replace it with the OpenAI key you copied in Task 1, Step 6.
     ```
     ```python
-      AZURE_OPENAI_ENDPOINT= "YOUR_OPENAI_ENDPOINT" //#Replace with the OpenAI Endpoint you copied in Task 1,Step 5.
+      AZURE_OPENAI_ENDPOINT= "YOUR_OPENAI_ENDPOINT" //#Replace with the OpenAI Endpoint you copied in Task 1, Step 6.
     ```
     ```python
-      AZURE_OPENAI_EMB_DEPLOYMENT = "ada-002" //#Replace with the embedding model deployment name you copied in Task 1,Step 4.
+      AZURE_OPENAI_EMB_DEPLOYMENT = "text-embedding-3-small" //#Replace with the embedding model deployment name you copied in Task 1, Step 5.
     ```
     ```python
-      AZURE_OPENAI_CHAT_DEPLOYMENT= "copilot-gpt"  //#Replace with the gpt deployment name you copied in Task 1,Step 4.
+      AZURE_OPENAI_CHAT_DEPLOYMENT= "copilot-gpt"  //#Replace with the gpt deployment name you copied in Task 1, Step 5.
     ```
     ```python
-      AZURE_SEARCH_SERVICE_ENDPOINT="YOUR_SEARCH_SERVICE_ENDPOINT" //#Replace with Search Service Endpoint you copied in Task 1,Step 7.
+      AZURE_SEARCH_SERVICE_ENDPOINT="YOUR_SEARCH_SERVICE_ENDPOINT" //#Replace with the Search Service Endpoint you copied in Task 1, Step 8.
     ```
     ```python  
-      AZURE_SEARCH_ADMIN_KEY= "YOUR_SEARCH_SERVICE_ADMIN_KEY" //#Replace the value with the Primary admin key you copied in Task 1,Step 8.
+      AZURE_SEARCH_ADMIN_KEY= "YOUR_SEARCH_SERVICE_ADMIN_KEY" //#Replace the value with the Primary admin key you copied in Task 1, Step 9.
     ```
 
 1. After updating values, the `secrets.env` file should be as shown in the below screenshot. Press **CTRL + S** to save the file.
@@ -107,7 +103,7 @@ In this task, you will set up the HR/Payroll Copilot locally on your LabVM. You 
 
     > **Note**: You can enter your email address below to get notifications. If not, please leave this field blank and click on **Enter**.
 
-1. Once the execution of `streamlit run hr_copilot.py` is completed, a locally hosted HR Copliot application will be opened in the web browser. 
+1. Once the execution of `streamlit run hr_copilot.py` is completed, a locally hosted HR Copilot application will be opened in the web browser. 
 
     ![](../media/img17.png)
 
@@ -121,7 +117,7 @@ In this task, you will set up the HR/Payroll Copilot locally on your LabVM. You 
 
     ![](../media/eyhackimg1.png)
 
-1. Enter an example question . The questions are answered by the Copilot by searching a knowledge base.
+1. Enter an example question. The questions are answered by the Copilot by searching a knowledge base.
 
     ```
     When will I receive the W2 form?
@@ -180,13 +176,12 @@ This task involves integrating Azure Cognitive Search with your HR/Payroll Copil
     |Setting|Value|
     |---|---|
     |Column to vectorize| **content (1)** |
-    |Kind| **Azure OpenAI (2)** |
+    |Kind| **Microsoft Foundry (2)** |
     |Subscription| Select the available subscription **(3)** |
-    |Azure OpenAI service| **Copilot-OpenAI-<inject key="DeploymentID" enableCopy="false"></inject> (4)** |
-    |Model deployment| **ada-002 (5)** |
-    |Authentication type| **API key (6)** |
+    |Azure OpenAI service| **copilot-project-<inject key="DeploymentID" enableCopy="false"></inject> (4)** |
+    |Model deployment| **text-embedding-3-small (5)** |
 
-    > **Note:** Make sure the acknowledgment checkbox for Azure OpenAI additional costs is enabled **(7)**.
+    > **Note:** Make sure the acknowledgment checkbox for Azure OpenAI additional costs is enabled **(6)** and proceed to the **Next page (7)**.
 
     ![Picture 1](../media/BI03.png)
 
@@ -215,7 +210,7 @@ This task involves integrating Azure Cognitive Search with your HR/Payroll Copil
 
 In this task, you'll deploy the HR/Payroll Copilot application to Azure. You'll use a Bicep file to configure the necessary settings and then deploy the application using Azure Dev CLI commands.
 
-1. In the LabVM, open File Explorer, navigate to the below-mentioned path, right-click on the `main.bicep` file, and select open with  **Visual Studio Code**.
+1. In the LabVM, open File Explorer, navigate to the below-mentioned path, right-click on the `main.bicep` file, and select **Open with** > **Visual Studio Code**.
 
       ```
       C:\LabFiles\OpenAIWorkshop\infra
@@ -226,22 +221,19 @@ In this task, you'll deploy the HR/Payroll Copilot application to Azure. You'll 
 1. In the **appsettings** section of the `main.bicep` file, replace the values below with the ones you copied previously in the text editor. Next, press **CTRL + S** to save the file.
 
     ```python
-      AZURE_OPENAI_API_KEY = "YOUR_OPENAI_KEY" //#Replace it with the OpenAI key you copied in Task 1,Step 5.
+      AZURE_OPENAI_API_KEY = "YOUR_OPENAI_KEY" //#Replace it with the OpenAI key you copied in Task 1, Step 6.
     ```
     ```python
-      AZURE_OPENAI_ENDPOINT= "YOUR_OPENAI_ENDPOINT" //#Replace with the OpenAI Endpoint you copied in Task 1,Step 5.
+      AZURE_OPENAI_ENDPOINT= "YOUR_OPENAI_ENDPOINT" //#Replace with the OpenAI Endpoint you copied in Task 1, Step 6.
     ```
     ```python
-      AZURE_OPENAI_EMB_DEPLOYMENT = "ada-002" //#Replace with the embedding model deployment name you copied in Task 1,Step 4.
+      AZURE_OPENAI_EMB_DEPLOYMENT = "text-embedding-3-small" //#Replace with the embedding model deployment name you copied in Task 1, Step 5.
     ```
     ```python
-      AZURE_OPENAI_CHAT_DEPLOYMENT= "copilot-gpt"  //#Replace with the gpt deployment name you copied in Task 1,Step 4.
+      AZURE_OPENAI_CHAT_DEPLOYMENT= "copilot-gpt"  //#Replace with the gpt deployment name you copied in Task 1, Step 5.
     ```
     ```python
-      AZURE_SEARCH_SERVICE_ENDPOINT="YOUR_SEARCH_SERVICE_ENDPOINT" //#Replace with Search Service Endpoint you copied in Task 1,Step 7.
-    ```
-    ```python  
-      AZURE_SEARCH_ADMIN_KEY= "YOUR_SEARCH_SERVICE_ADMIN_KEY" //#Replace the value with the Primary admin key you copied in Task 1,Step 8.
+      AZURE_SEARCH_SERVICE_ENDPOINT="YOUR_SEARCH_SERVICE_ENDPOINT" //#Replace with the Search Service Endpoint you copied in Task 1, Step 8.
     ```
 
     The `appsettings` section should look like the below screenshot after you update the values.
@@ -279,7 +271,9 @@ In this task, you'll deploy the HR/Payroll Copilot application to Azure. You'll 
    ```bash
    azd up
    ```
-   
+
+    >**Note:** If you are prompted to install azure development tools, type **No**.
+
 1. Please select your Azure subscription to use, enter `1`, and click on the **Enter** button.
 
    ![](../media/img29.png)
@@ -307,9 +301,10 @@ In this task, you'll deploy the HR/Payroll Copilot application to Azure. You'll 
     ![](../media/img46.png)
 
     > **Note**: If an issue occurs when you try to launch the app service, please restart the app service and wait five minutes before trying to launch the app again.
-       ![](../media/L2-T3-S13.png)
+    
+    ![](../media/L2-T3-S13.png)
 
-    > i. Even after 10 minutes of restarting the app service, the webpage still shows the error. Return to the **command prompt(cmd)**, press **Ctrl+C** to stop, and execute the below command. 
+    > Even after 10 minutes of restarting the app service, the webpage still shows the error. Return to the **command prompt(cmd)**, press **Ctrl+C** to stop, and execute the below command. 
 
       ```
       azd up
@@ -317,9 +312,9 @@ In this task, you'll deploy the HR/Payroll Copilot application to Azure. You'll 
       
       ![](../media/L2-T3-S13b.png)
 
-    > ii. Now follow steps 12 and 13 of Task 3, and you should see the webpage where you can interact with the chatbot."
+    > Now follow steps 12 and 13 of Task 3, and you should see the webpage where you can interact with the chatbot.
 
-      ![](../media/img46.png)
+    ![](../media/img46.png)
 
 1. Run the following query to validate the identity of the employee:
 
@@ -329,7 +324,7 @@ In this task, you'll deploy the HR/Payroll Copilot application to Azure. You'll 
 
     ![](../media/eyhackimg1.png)
     
-1. Enter an example question . The questions are answered by the Copilot by searching a knowledge base.
+1. Enter an example question. The questions are answered by the Copilot by searching a knowledge base.
 
     ```
     When will I receive the W2 form?

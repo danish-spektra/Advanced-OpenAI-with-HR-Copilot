@@ -4,9 +4,9 @@
 
 ## Overview
 
-In this hands-on lab, you will provision an Azure OpenAI resource in Azure AI Foundry and install the HR/Payroll Copilot application locally. Modern Azure OpenAI deployments focus on lifecycle-supported models such as GPT-4.1, GPT-4.1-mini, and the GPT-5 family, replacing legacy GPT-3 and earlier GPT-4 variants. This ensures your implementation aligns with Microsoft’s current model roadmap and long-term upgrade strategy.
+In this hands-on lab, you will provision an Azure OpenAI resource through Microsoft Foundry, the new portal, and install the HR/Payroll Copilot application locally. Modern Azure OpenAI deployments focus on lifecycle-supported models such as the GPT-5 series (including GPT-5.2), replacing legacy GPT-3 and earlier GPT-4 variants. This ensures your implementation aligns with Microsoft’s current model roadmap and long-term upgrade strategy.
 
-A key capability explored in this lab is **Function Calling**, which enables GPT-4.1 and GPT-5 class models to generate structured JSON outputs mapped to predefined functions. Instead of returning only conversational text, the model can intelligently determine when to invoke backend functions and provide validated arguments for execution. This structured integration enables seamless connectivity between the copilot application and HR/Payroll systems, APIs, and enterprise tools.
+A key capability explored in this lab is **Function Calling**, which enables GPT-5-series models to generate structured JSON outputs mapped to predefined functions. Instead of returning only conversational text, the model can intelligently determine when to invoke backend functions and provide validated arguments for execution. This structured integration enables seamless connectivity between the copilot application and HR/Payroll systems, APIs, and enterprise tools.
 
 You will also work with a Python-based Smart_Agent object that manages goals and task execution, handles natural language interactions, executes tools, and maintains conversational memory. The solution is built using a multi-agent copilot architecture, where specialist agents are coordinated by an agent runner to efficiently manage HR and payroll-related workflows while maintaining context across interactions.
 
@@ -22,7 +22,7 @@ By the end of this lab, you will be able to:
 
 Participants should have:
 
-- **Familiarity with Modern GPT Models:** Understanding of GPT-4.1 class or GPT-5 class models and their enterprise capabilities within Azure OpenAI.
+- **Familiarity with Modern GPT Models:** Understanding of GPT-5 series models and their enterprise capabilities within Azure OpenAI.
 
 - **Experience with REST APIs:** Familiarity with REST APIs, as function calling involves interacting with backend services.
 
@@ -32,7 +32,7 @@ Participants should have:
 
 ## Architecture
 
-In this hands-on lab, the architecture flow includes several essential components. You’ll begin by provisioning the Azure OpenAI resource in Azure AI Foundry and deploying a lifecycle-supported model such as GPT-4.1 or a GPT-5 family model. At the core of the architecture is the Azure OpenAI Service utilizing function calling capabilities to generate structured JSON outputs from predefined HR/Payroll functions. These structured outputs enable secure and reliable integration with enterprise systems and services.
+In this hands-on lab, the architecture flow includes several essential components. You’ll begin by provisioning the Azure OpenAI resource through Microsoft Foundry, the new portal, and deploying a lifecycle-supported model from the GPT-5 series (such as GPT-5.2). At the core of the architecture is the Azure OpenAI Service, accessed through Microsoft Foundry, utilizing function calling capabilities to generate structured JSON outputs from predefined HR/Payroll functions. These structured outputs enable secure and reliable integration with enterprise systems and services.
 
 The Smart_Agent Python object plays a crucial role, handling tasks such as goal definition, natural language processing (NLP) interactions, tool execution, and conversation memory management, while securely connecting to the deployed Azure OpenAI model. Additionally, the system uses a multi-agent copilot architecture, where a specialized agent runner coordinates multiple domain-specific agents (such as HR and Payroll agents), ensuring efficient workflow orchestration and contextual continuity across diverse operational scenarios.
 
@@ -44,7 +44,7 @@ The Smart_Agent Python object plays a crucial role, handling tasks such as goal 
 
 The architecture for this lab involves the following key components:
 
-- **Azure OpenAI:** Azure OpenAI Service provides REST API access to OpenAI's powerful language models, and these models integrate with your data, enabling customized and secure interactions.
+- **Azure OpenAI:** Azure OpenAI Service, accessed through Microsoft Foundry (the new portal) to execute this exercise, provides REST API access to OpenAI's powerful language models, and these models integrate with your data, enabling customized and secure interactions.
 
 - **Azure OpenAI Models:** Offers pre-trained and customizable large language models for various AI applications. These models allow for powerful AI-driven solutions by generating tailored and contextually relevant content based on well-crafted prompts.
 
@@ -54,7 +54,7 @@ The architecture for this lab involves the following key components:
 
 After the environment has been set up, your browser will load a virtual machine (JumpVM) and the lab manual. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the bottom of the lab guide to switch to different exercises in the lab guide.
 
- ![](../media/im-01.png)
+ ![](../media/im-gs-03.png)
  
 ## Exploring Your Lab Resources
  
@@ -102,15 +102,15 @@ Feel free to start, stop, or restart your virtual machine as needed from the **R
 
       ![](../media/sign.png)
 
-7. If a **Welcome to Microsoft Azure** popup window appears, select **Maybe Later** to skip the tour.
+5. If a **Welcome to Microsoft Azure** popup window appears, select **Maybe Later** to skip the tour.
    
-8. Now that you can see the Azure Portal dashboard, click on **Resource groups** from the Navigate panel.
+6. Now that you can see the Azure Portal dashboard, click on **Resource groups** from the Navigate panel.
 
    ![](../media/select-rg.png "Resource groups")
 
-9. Click "Next" from the bottom right corner to embark on your Lab journey!
+7. Click "Next" from the bottom right corner to embark on your Lab journey!
 
-     ![](../media/next.png)
+     ![](../media/next01.png)
 
 ### Support Contact
 The CloudLabs support team is available 24/7, 365 days a year, via email and live chat to ensure seamless assistance at any time. We offer dedicated support channels tailored specifically for both learners and instructors, ensuring that all your needs are promptly and efficiently addressed.
