@@ -2,7 +2,7 @@
 
 ## Overview
 
-This lab focuses on the Function Calling feature in Azure OpenAI, an advanced capability that enables modern lifecycle-supported models such as GPT-4.1 and GPT-5 family models to generate structured JSON outputs mapped to predefined functions. Unlike legacy GPT-3 and earlier GPT-4 models, current Azure OpenAI deployments are built around forward-compatible model versions designed for enterprise-grade scalability and long-term support.
+This lab focuses on the Function Calling feature in Azure OpenAI, an advanced capability that enables modern lifecycle-supported models such as the GPT-5 series to generate structured JSON outputs mapped to predefined functions. Unlike legacy GPT-3 and earlier GPT-4 models, current Azure OpenAI deployments are built around forward-compatible model versions designed for enterprise-grade scalability and long-term support.
 
 By integrating these models with external systems, you can gain enhanced control, reliability, and flexibility in automation and data processing tasks. Function calling allows the model to intelligently determine when to invoke backend services and provide validated arguments for execution, enabling seamless integration with APIs, databases, and business workflows.
 
@@ -14,29 +14,25 @@ To learn more about Azure function calling, please refer to [Function calling in
 
 In this task, you will explore how to set up and configure the Azure OpenAI environment to leverage function calling. You will gather necessary information such as deployment names, API keys, and service endpoints, and configure them in a sample project. Finally, you will run a Jupyter Notebook to observe how function calling works in action.
 
-1. In the Azure portal, search for **Azure OpenAI** **(1)** in the top search box, then select **Azure OpenAI** **(2)** under services.
+1. In the Azure portal, search for **Foundry** **(1)** in the top search box, then select **Microsoft Foundry** **(2)** under Services.
 
-   ![](../media/img1lab2.png "Azure OpenAI")
+   ![](../media/L1-T1-S1.png "Azure OpenAI")
 
-1. From the **Microsoft Foundry | Azure OpenAI** pane, select **Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>**.
+1. From the side pane, expand **use with foundry (1)**, click on **Foundry (2)**, select the existing **Foundry resource Copilot-OpenAI-<inject key="Deployment ID" enableCopy="false"/>(3)**.
 
-   ![](../media/im-d.png "Azure OpenAI")
+   ![](../media/exe100-1.png "Azure OpenAI")
 
-1. In the Azure OpenAI resource pane, select **Go to Foundry portal**.
+1. In the Foundry resource pane, select **Go to Foundry portal**.
 
-   ![](../media/aifd.png "Azure OpenAI")
-
-   >**Note:** If you see the Create project screen, turn off the **New Foundry** toggle in the top-right corner. When the feedback pop-up appears, click **Continue without feedback**. Under Keep building with Microsoft Foundry, click **copilot-openai-<inject key="Deployment ID" enableCopy="false"/>** Resource.
+   ![](../media/im-05.png "Azure OpenAI")
       
-1. In the **Azure OpenAI Studio**, select **Deployments (1)** under Shared Resources and verify that the **gpt-4.1** and **text-embedding-ada-002** models are present with the deployment names **(2)** as **copilot-gpt** and **text-embedding-ada-002**. Review that the model's capacity **(3)** is set to **15**. Copy the Azure OpenAI deployment names and model names into a text file for later use.
+1. In the **Microsoft Foundry** portal, select **Build (1)** on the top bar and click **Models (2)** and verify that the **copilot-gpt (3)** model is present, as well as the text embedding model, both of which are pre-deployed for this lab.
    
    ![](../media/im-e.png)
 
-1. Make sure to copy the deployment name, API key, API version, and endpoint.
+1. Make sure to copy the deployment name, API key, and endpoint of the model and save them in your editor.
 
-   ![](../media/p12.1.png)
-
-1. You can also find the values by navigating back to the Azure OpenAI resource on the **Azure portal**, select **Keys & Endpoint (1)** under resource management from the left menu, and click on **Show Keys (2)**. Copy the **KEY 1 (3)** and **Endpoint (4)**, and store them in a text file for later use.
+1. Navigate back to the **Home tab (1)** on the **Foundry resource**, copy the **API Key (2)** and **Azure OpenAI Endpoint (3)**, and store them in a text file for later use.
 
    ![](../media/l1-t2-s5.png "Azure OpenAI")
    
@@ -69,7 +65,7 @@ In this task, you will explore how to set up and configure the Azure OpenAI envi
 1. In the **Functions** folder, open `config.json` and replace the following values with the ones you copied earlier. Next, press **CTRL + S** to save the file.
 
     - **DEPLOYMENT_NAME**: `Replace the value with the gpt-model name as ` **copilot-gpt** 
-    - **OPENAI_API_BASE**: `Replace the value with Azure OpenAI Endpoint`
+    - **OPENAI_API_ENDPOINT**: `Replace the value with Azure OpenAI Endpoint`
     - **OPENAI_API_KEY**: `Replace the value with Azure OpenAI Key`
     - **SEARCH_SERVICE_ENDPOINT**: `Replace the value with the Search Service Endpoint`
     - **SEARCH_ADMIN_KEY**: `Replace the value with the Search Service key`
@@ -104,7 +100,7 @@ In this task, you will explore how to set up and configure the Azure OpenAI envi
 
       ![](../media/p24.png) 
 
-   > **Note**: If prompt **Runnning cells with 'c:\pytjon311\python.exe' requires the ipykernel package.** then click on **Install**.
+   > **Note**: If prompted with **Running cells with 'c:\python311\python.exe' requires the ipykernel package.** then click on **Install**.
 
       ![](../media/install.png)
 
@@ -122,6 +118,6 @@ In this task, you will explore how to set up and configure the Azure OpenAI envi
 
 In this lab, you have accomplished the following:
 
-- You have learned how to configure and set up the Azure OpenAI environment for function calls.
+- You have learned how to configure and set up the Microsoft Foundry environment for function calls.
 - You explored gathering and configuring essential details like deployment names, API keys, and service endpoints.
 - You observed the function calling process through the execution of a Jupyter Notebook in Visual Studio Code.
